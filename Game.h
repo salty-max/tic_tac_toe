@@ -3,13 +3,19 @@
 //
 
 #pragma once
+#include "Player.h"
 
 class Game {
 public:
-    Game();
-    void printBoard();
-    void clearBoard();
+  void playGame();
 
 private:
-    char _board[3][3];
+  char _board[3][3]{};
+  static void printTitle();
+  void printBoard();
+  void clearBoard();
+  static int getXCoord();
+  static int getYCoord();
+  bool placeMarker(int x, int y, const Player &player);
+  bool checkForVictory(char marker);
 };

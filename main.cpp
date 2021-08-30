@@ -1,11 +1,21 @@
-#include <iostream>
 #include "Game.h"
+#include <iostream>
 
 int main() {
-    Game game;
+  char input;
+  bool isDone = false;
+  Game game;
 
-    game.printBoard();
+  while (!isDone) {
+    game.playGame();
+    std::cout << "Would you like to play again (Y/N): ";
+    std::cin >> input;
 
-    getchar();
-    return 0;
+    if (input == 'N' || input == 'n') {
+      isDone = true;
+    }
+  }
+
+  getchar();
+  return 0;
 }
